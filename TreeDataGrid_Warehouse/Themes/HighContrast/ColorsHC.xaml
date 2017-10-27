@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<!-- Color Resources -->
+	<!-- From colors.xaml -->
+	<Color x:Key="InactiveControlBGColor"></Color>
+	<Color x:Key="DefaultBGColor"></Color>
+	<Color x:Key="AdditionalActiveControlBGColor"></Color>
+	<Color x:Key="ActiveControlBGColor"></Color>
+	<Color x:Key="DefaultFGColor"></Color>
+	<Color x:Key="AdditionalFGColor"></Color>
+	<Color x:Key="SecondAdditionalFGColor"></Color>
+	<Color x:Key="Azul">#599DD4</Color>
+	<Color x:Key="Arena">#E5BD7B</Color>
+	<Color x:Key="Rosa">#E47D89</Color>
+	<Color x:Key="ControlBorderColor">#FFF</Color>
+</ResourceDictionary>

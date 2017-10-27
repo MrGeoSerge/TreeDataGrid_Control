@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="InactiveControlBGColorBrush"
+			Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
+	<SolidColorBrush x:Key="DefaultBGColorBrush" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
+	<SolidColorBrush x:Key="AdditionalActiveControlBGColorBrush"
+			Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
+	<SolidColorBrush x:Key="ActiveControlBGColorBrush" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
+	<SolidColorBrush x:Key="AdditionalFGColorBrush" Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" />
+	<SolidColorBrush x:Key="SecondAdditionalFGColorBrush"
+			Color="{DynamicResource {x:Static SystemColors.WindowTextBrush}}" />
+	<SolidColorBrush x:Key="DefaultFGColorBrush" Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" />
+	<!-- Functional Color Styles -->
+	<SolidColorBrush x:Key="TextBrushHC" Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" />
+	<SolidColorBrush x:Key="HyperlinkBrushHC" Color="{DynamicResource {x:Static SystemColors.HotTrackColorKey}}" />
+	<SolidColorBrush x:Key="DisabledTextBrushHC" Color="{DynamicResource {x:Static SystemColors.GrayTextColorKey}}" />
+	<SolidColorBrush x:Key="HighlightTextBrushHC"
+			Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}" />
+	<SolidColorBrush x:Key="HighlightBrushHC" Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
+	<SolidColorBrush x:Key="ControlTextBrushHC" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}" />
+	<SolidColorBrush x:Key="ControlBrushHC" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}" />
+	<SolidColorBrush x:Key="BackgroundBrushHC" Color="{DynamicResource {x:Static SystemColors.WindowColorKey}}" />
+	<SolidColorBrush x:Key="FocusVisualBrushHC" Color="{DynamicResource {x:Static SystemColors.WindowTextColorKey}}" />
+	<!--NewSessionDialog Styles-->
+	<SolidColorBrush x:Key="TabItemSelectedFG" Color="{DynamicResource {x:Static SystemColors.HighlightTextColorKey}}" />
+	<SolidColorBrush x:Key="TabItemSelectedBG" Color="{DynamicResource {x:Static SystemColors.HighlightColorKey}}" />
+	<SolidColorBrush x:Key="TabItemNotSelectedFG" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}" />
+	<SolidColorBrush x:Key="TabItemNotSelectedBG" Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}" />
+	<!---->
+	<SolidColorBrush x:Key="ControlBorderBrush" Color="{DynamicResource {x:Static SystemColors.ControlTextColorKey}}" />
+	<SolidColorBrush x:Key="MenuTextBrushHC" Color="{DynamicResource {x:Static SystemColors.MenuTextColorKey}}"/>
+    <SolidColorBrush x:Key="MenuBrushHC" Color="{DynamicResource {x:Static SystemColors.MenuColorKey}}"/>
+    <SolidColorBrush x:Key="WindowFrameBrushHC" Color="{DynamicResource {x:Static SystemColors.WindowFrameColorKey}}"/>
+	<SolidColorBrush x:Key="SeparatorBrushHC" Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+	<SolidColorBrush x:Key="FrameBrushHC" Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+</ResourceDictionary>

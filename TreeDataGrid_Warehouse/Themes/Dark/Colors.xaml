@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Color x:Key="DefaultFGColor">#FFFFFF</Color>
+	<Color x:Key="AdditionalFGColor">#888888</Color>
+	<Color x:Key="SecondAdditionalFGColor">#999999</Color>
+	<Color x:Key="DefaultBGColor">#2D2D30</Color>
+	<Color x:Key="ActiveControlBGColor">#3F3F46</Color>
+	<Color x:Key="AdditionalActiveControlBGColor">#333337</Color>
+	<Color x:Key="InactiveControlBGColor">#1E1E1E</Color>
+	<Color x:Key="Azul">#599DD4</Color>
+	<Color x:Key="Arena">#E5BD7B</Color>
+	<Color x:Key="Rosa">#E47D89</Color>
+	<Color x:Key="ControlBorderColor">#000</Color>
+	<!--DataGridColors-->
+	<Color x:Key="DataGridHeaderBackgroundColor">#2D2E32</Color>
+	<Color x:Key="DataGridHeaderBorderColor">#707070</Color>
+	<Color x:Key="DataGridHeaderMouseOverBackgroundColor">#777777</Color>
+	<Color x:Key="DataGridHeaderMouseOverBorderColor">#B0B0B0</Color>
+	<Color x:Key="DataGridHeaderPressedBackgroundColor">#CDCDCD</Color>
+	<Color x:Key="DataGridHeaderPressedBorderColor">#595959</Color>
+	<Color x:Key="DataGridRowBackgroundColor">#3D3D3D</Color>
+	<Color x:Key="DataGridAltRowBackgroundColor">#333333</Color>
+	<Color x:Key="DataGridRowBorderColor">#000000</Color>
+	<Color x:Key="DataGridRowMouseOverBackgroundColor">#565656</Color>
+	<Color x:Key="DataGridRowPressedBackgroundColor">#6C6C6C</Color>
+	<Color x:Key="DataGridCellSelectedBorderColor">#789FC3</Color>
+	<Color x:Key="DataGridBackgroundColor">#333337</Color>
+	<Color x:Key="DataGridDisabledColor">#1E1E1E</Color>
+	<Color x:Key="DataGridSelectedColumnHeaderTextColor">#262626</Color>
+</ResourceDictionary>

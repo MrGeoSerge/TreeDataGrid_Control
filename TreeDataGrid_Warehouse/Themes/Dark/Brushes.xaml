@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<SolidColorBrush x:Key="InactiveControlBGColorBrush" Color="{DynamicResource InactiveControlBGColor}" />
+	<SolidColorBrush x:Key="DefaultBGColorBrush" Color="{DynamicResource  DefaultBGColor}" />
+	<SolidColorBrush x:Key="AdditionalActiveControlBGColorBrush"
+			Color="{DynamicResource  AdditionalActiveControlBGColor}" />
+	<SolidColorBrush x:Key="ActiveControlBGColorBrush" Color="{DynamicResource  ActiveControlBGColor}" />
+	<SolidColorBrush x:Key="AdditionalFGColorBrush" Color="{DynamicResource  AdditionalFGColor}" />
+	<SolidColorBrush x:Key="SecondAdditionalFGColorBrush" Color="{DynamicResource  SecondAdditionalFGColor}" />
+	<SolidColorBrush x:Key="DefaultFGColorBrush" Color="{DynamicResource DefaultFGColor}" />
+	<SolidColorBrush x:Key="AzulBrush" Color="{DynamicResource  Azul}" />
+	<SolidColorBrush x:Key="ArenaBrush" Color="{DynamicResource  Arena}" />
+	<SolidColorBrush x:Key="RosaBrush" Color="{DynamicResource  Rosa}" />
+	<!-- Functional Color Styles -->
+	<SolidColorBrush x:Key="TextBrush" Color="#F1F1F1" />
+	<SolidColorBrush x:Key="HyperlinkBrush" Color="#007ACC" />
+	<SolidColorBrush x:Key="DisabledTextBrush" Color="#ABABAB" />
+	<SolidColorBrush x:Key="UnSelectedTextBrush" Color="#ABABAB" />
+	<SolidColorBrush x:Key="DisabledBrush" Color="#1E1E1E" />
+	<SolidColorBrush x:Key="HighlightTextBrush" Color="#F1F1F1" />
+	<SolidColorBrush x:Key="HighlightBrush" Color="#3F3F46" />
+	<SolidColorBrush x:Key="HighlightBrushSecond" Color="#1C97EA" />
+	<SolidColorBrush x:Key="ControlBorderBrush" Color="#434346" />
+	<SolidColorBrush x:Key="LightControlBorderBrush" Color="#838383" />
+	<SolidColorBrush x:Key="ControlTextBrush" Color="#F1F1F1" />
+	<SolidColorBrush x:Key="ControlBrush" Color="#333337" />
+	<SolidColorBrush x:Key="PressedControlBrush" Color="#007ACC" />
+	<SolidColorBrush x:Key="PressedControlBrushBG" Color="#1F1F20" />
+	<SolidColorBrush x:Key="BackgroundBrush" Color="#2D2D30" />
+	<SolidColorBrush x:Key="FocusVisualBrush" Color="#D7D7D7" />
+	<SolidColorBrush x:Key="SeparatorBrush" Color="#333337" />
+	<SolidColorBrush x:Key="MenuBGBrush" Color="#1B1B1C" />
+	<!--DataGridBrushes-->
+	<SolidColorBrush x:Key="DataGridHeaderBackgroundBrush" Color="#2D2E32" />
+	<SolidColorBrush x:Key="DataGridHeaderBorderBrush" Color="#707070" />
+	<SolidColorBrush x:Key="DataGridHeaderMouseOverBackgroundBrush" Color="#878787" />
+	<SolidColorBrush x:Key="DataGridHeaderMouseOverBorderBrush" Color="#B0B0B0" />
+	<SolidColorBrush x:Key="DataGridHeaderPressedBackgroundBrush" Color="#CDCDCD" />
+	<SolidColorBrush x:Key="DataGridHeaderPressedBorderBrush" Color="#595959" />
+	<SolidColorBrush x:Key="DataGridRowBackgroundBrush" Color="#3D3D3D" />
+	<SolidColorBrush x:Key="DataGridAltRowBackgroundBrush" Color="#333333" />
+	<SolidColorBrush x:Key="DataGridRowBorderBrush" Color="#000000" />
+	<SolidColorBrush x:Key="DataGridRowMouseOverBackgroundBrush" Color="#565656" />
+	<SolidColorBrush x:Key="DataGridRowPressedBackgroundBrush" Color="#6C6C6C" />
+	<SolidColorBrush x:Key="DataGridCellSelectedBorderBrush" Color="#789FC3" />
+	<SolidColorBrush x:Key="DataGridBackgroundBrush" Color="#333337" />
+	<SolidColorBrush x:Key="DataGridDisabledBrush" Color="#1E1E1E" />
+	<SolidColorBrush x:Key="ErrorForegroundBrush" Color="#FF0000" />
+	<SolidColorBrush x:Key="DataGridSelectedColumnHeaderTextBrush" Color="#262626" />
+	<!--NewSessionDialog Styles-->
+	<SolidColorBrush x:Key="TabItemSelectedFG" Color="{DynamicResource DefaultFGColor}" />
+	<SolidColorBrush x:Key="TabItemSelectedBG" Color="{DynamicResource ActiveControlBGColor}" />
+	<SolidColorBrush x:Key="TabItemNotSelectedFG" Color="{DynamicResource AdditionalFGColor}" />
+	<SolidColorBrush x:Key="TabItemNotSelectedBG" Color="{DynamicResource InactiveControlBGColor}" />
+</ResourceDictionary>
