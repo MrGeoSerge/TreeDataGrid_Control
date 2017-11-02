@@ -12,25 +12,21 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
 {
     public class TreeDataGrid : DataGrid
     {
-        #region Properties
-        public TreeDataGridRowsCollection<TreeNode> Rows {
+		//объект для хранения состояния строк
+		RowsCollectionHistory rowsCollectionHistory;
+
+		#region Properties
+
+		//внутренняя коллекция строк, представляющая собой видимые узлы
+		//актуально размещенные в ДатаГриде
+		public TreeDataGridRowsCollection<TreeNode> Rows {
             get;
             private set;
         }
 
-		WarehouseModel model;
+		//WarehouseModel model;
 
 		public WarehouseModel Model { get; set; } 
-//		get { return model; }
-//			set {
-//				if (model != value) {
-//					model = value;
-//					//root.Children.Clear ();
-//					//Rows.Clear ();
-//					CreateChildrenNodes (root);
-//}
-//			}
-//        }
 
         private TreeNode root;
 
@@ -70,24 +66,43 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             root.IsExpanded = true;//показываем новый узел
             ItemsSource = Rows;//задаем источник данных для ДатаГрида
             ItemContainerGenerator.StatusChanged += ItemContainerGeneratorStatusChanged;
-			Model = new WarehouseModel ();
-			CreateChildrenNodes (root);
+			Model = new WarehouseModel (); //создаем модель, которая будет предоставлять данные
+			CreateChildrenNodes (root);//создаем узлы-наследники
+
+			//сохранение состояния
+			rowsCollectionHistory = new RowsCollectionHistory ();
 		}
 
-		public void UpdateTreeDataGrid (TreeNode treeNode)
+
+		//обновляем дерево после даблКлика
+		public int UpdateTreeDataGrid (TreeNode treeNode)
 		{
-			//root.Children.Clear ();
-			//Rows.Clear ();
+			rowsCollectionHistory.RowsHistory.Add (Rows);
+			rowsCollectionHistory.StatesCounter++;
 
+			Rows = new TreeDataGridRowsCollection<TreeNode> ();
+			Rows.Add (treeNode);
 
-			//Rows = new TreeDataGridRowsCollection<TreeNode> (); //создаем пустую коллекцию строк
-			//root = treeNode; //создаем новый узел
-			//root.IsExpanded = true;
-			//ItemsSource = Rows;
-			//ItemContainerGenerator.StatusChanged += ItemContainerGeneratorStatusChanged;
-			
-			//Model = new WarehouseModel ();
-			//CreateChildrenNodes (treeNode);
+			ItemsSource = Rows;
+
+			return rowsCollectionHistory.StatesCounter;
+		}
+
+		//возвращаем один из предыдущих видов дерева
+		public void ReturnToPreviousTreeDataGrid (int index)
+		{
+			//берем источник строк
+			Rows = rowsCollectionHistory.RowsHistory[index];
+
+			//обновляем источник данных
+			ItemsSource = Rows;
+
+			///стереть дальнейшую историю еще
+
+			//удаляем стейты
+			//rowsCollectionHistory.RowsHistory.Count;
+			rowsCollectionHistory.RowsHistory.RemoveRange (index + 1, rowsCollectionHistory.RowsHistory.Count - (index + 1));
+
 		}
 
 		void ItemContainerGeneratorStatusChanged (object sender, EventArgs e)
@@ -100,22 +115,26 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             }
         }
 
+		//перезаписанный метод от ДатаГрида, который инстанциирует новый ДатаГридРоу
         protected override DependencyObject GetContainerForItemOverride ()
         {
             return new TreeDataGridRow ();
         }
 
+		//перезаписанный метод от ДатаГрида, определяет, является ли Итем ДатаГридРоу
         protected override bool IsItemItsOwnContainerOverride (object item)
         {
             return item is TreeDataGridRow;
         }
 
+
+		//подготавливает новую строку для вставки указанного Итема
         protected override void PrepareContainerForItemOverride (DependencyObject element, object item)
         {
-            var ti = element as TreeDataGridRow;
-            var node = item as TreeNode;
-            if (ti != null && node != null) {
-                ti.Node = item as TreeNode;
+            var ti = element as TreeDataGridRow; //передаем новую пустую строку
+            var node = item as TreeNode; //передаем Итем, который будет содержаться в строке
+            if (ti != null && node != null) { //
+                ti.Node = item as TreeNode; 
                 base.PrepareContainerForItemOverride (element, node.Tag);
             }
         }
@@ -137,6 +156,8 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             }
         }
 
+
+		//создание узлов-наследников
         internal void CreateChildrenNodes (TreeNode node)
         {
             var children = GetChildren (node);
@@ -177,6 +198,8 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             }
         }
 
+
+		//получение узлов-наследников из модели
         IEnumerable GetChildren (TreeNode parent)
         {
             if (Model != null)
@@ -185,7 +208,7 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
                 return null;
         }
 
-        private bool HasChildren (TreeNode parent)
+        bool HasChildren (TreeNode parent)
         {
             if (parent == Root)
                 return true;

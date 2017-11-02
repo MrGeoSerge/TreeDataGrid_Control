@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TreeDataGrid_Warehouse.Controls.TreeDataGrid;
 using TreeDataGrid_Warehouse.Model;
-using TreeDataGrid_Warehouse.ViewModel;
 
 namespace TreeDataGrid_Warehouse.View
 {
@@ -31,12 +30,15 @@ namespace TreeDataGrid_Warehouse.View
 
 		private void Warehouse_TreeDataGrid_MouseDoubleClick (object sender, MouseButtonEventArgs e)
 		{
+			//обновляем ТриДатаГрид
 			var warehouseItem = (sender as TreeDataGrid)?.SelectedItem as TreeNode;
 
-			Warehouse_TreeDataGrid.UpdateTreeDataGrid (warehouseItem);
-			//Warehouse_TreeDataGrid.Model = new WarehouseModel ();
+			//возвращает счетчик состояний
+			var index = Warehouse_TreeDataGrid.UpdateTreeDataGrid (warehouseItem);
 
-			//Warehouse_TreeDataGrid.Model.GetChildren (warehouseItem);
+			//создаем кнопку
+			var gridParent = (this.Parent as Grid).Parent as MainWindow;
+			gridParent.AddDrillDownButton (index);
 		}
 	}
 }

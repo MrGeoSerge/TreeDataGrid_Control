@@ -6,6 +6,8 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
 {
     class TreeDataGridRow : DataGridRow, INotifyPropertyChanged
     {
+		public int ExpandHierarchyIndex { get; set; }
+
         private TreeNode _node;
         public TreeNode Node
         {
@@ -27,47 +29,47 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
 
 		}
 
-        protected override void OnKeyDown (KeyEventArgs e)
-        {
-            if (Node != null) {
-                switch (e.Key) {
-                    case Key.Right:
-                        e.Handled = true;
-                        if (!Node.IsExpanded) {
-                            Node.IsExpanded = true;
-                            ChangeFocus (Node);
-                        } else if (Node.Children.Count > 0)
-                            ChangeFocus (Node.Children[0]);
-                        break;
+        //protected override void OnKeyDown (KeyEventArgs e)
+        //{
+        //    if (Node != null) {
+        //        switch (e.Key) {
+        //            case Key.Right:
+        //                e.Handled = true;
+        //                if (!Node.IsExpanded) {
+        //                    Node.IsExpanded = true;
+        //                    ChangeFocus (Node);
+        //                } else if (Node.Children.Count > 0)
+        //                    ChangeFocus (Node.Children[0]);
+        //                break;
 
-                    case Key.Left:
-                        e.Handled = true;
-                        if (Node.IsExpanded && Node.IsExpandable) {
-                            Node.IsExpanded = false;
-                            ChangeFocus (Node);
-                        } else
-                            ChangeFocus (Node.Parent);
-                        break;
+        //            case Key.Left:
+        //                e.Handled = true;
+        //                if (Node.IsExpanded && Node.IsExpandable) {
+        //                    Node.IsExpanded = false;
+        //                    ChangeFocus (Node);
+        //                } else
+        //                    ChangeFocus (Node.Parent);
+        //                break;
 
-                    case Key.Subtract:
-                        e.Handled = true;
-                        Node.IsExpanded = false;
-                        ChangeFocus (Node);
-                        break;
+        //            case Key.Subtract:
+        //                e.Handled = true;
+        //                Node.IsExpanded = false;
+        //                ChangeFocus (Node);
+        //                break;
 
-                    case Key.Add:
-                        e.Handled = true;
-                        Node.IsExpanded = true;
-                        ChangeFocus (Node);
-                        break;
-                }
-            }
+        //            case Key.Add:
+        //                e.Handled = true;
+        //                Node.IsExpanded = true;
+        //                ChangeFocus (Node);
+        //                break;
+        //        }
+        //    }
 
-            if (!e.Handled)
-                base.OnKeyDown (e);
-        }
+        //    if (!e.Handled)
+        //        base.OnKeyDown (e);
+        //}
 
-        private void ChangeFocus (TreeNode node)
+        void ChangeFocus (TreeNode node)
         {
             var tree = node.Tree;
             if (tree != null) {
@@ -81,7 +83,7 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged (string name)
+        void OnPropertyChanged (string name)
         {
             PropertyChanged?.Invoke (this, new PropertyChangedEventArgs (name));
         }

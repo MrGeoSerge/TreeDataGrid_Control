@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\TreeDataGrid\MementoPattern\RowsCollectionHistory.cs" />
+    <Compile Include="Controls\TreeDataGrid\MementoPattern\RowsCollectionMemento.cs" />
+    <Compile Include="Controls\TreeDataGrid\MementoPattern\RowsCollectionOriginator.cs" />
     <Compile Include="Utilities\Converters.cs" />
     <Compile Include="Model\WarehouseModel.cs" />
     <Compile Include="View\WarehouseView.xaml.cs">

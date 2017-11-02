@@ -7,6 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <local:WarehouseView />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Expand All Nodes" Margin="3" Click="ExpandAllNodes_Click"/>
+            <Button Content="Collapse All Nodes" Margin="3" Click="CollapseAllNodes_Click"/>
+            
+        </StackPanel>
+        <StackPanel Name="StackPanelWithTreeViews" Orientation="Horizontal" Grid.Row="1">
+            <Button Content="FirstView" Margin="3" Click="ReturnToState" Tag="0"/>
+        </StackPanel>
+        <local:WarehouseView x:Name="WarehouseViewUserControl" Grid.Row="2"/>
     </Grid>
 </Window>

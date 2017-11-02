@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
 {
-    public sealed class TreeNode : INotifyPropertyChanged
+    public sealed class TreeNode : INotifyPropertyChanged //
     {
         #region NodeCollection
         private class NodeCollection : Collection<TreeNode>
@@ -168,6 +168,7 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             }
         }
 
+		//родитель, его можем использовать при дабл клике!!!!
         private TreeNode _parent;
 
         public TreeNode Parent
@@ -267,21 +268,21 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             }
         }
 
-        private object _tag;
+        object _tag;
 
         public object Tag
         {
             get { return _tag; }
         }
 
-        private Collection<TreeNode> _children;
+        Collection<TreeNode> _children;
 
         internal Collection<TreeNode> Children
         {
             get { return _children; }
         }
 
-        private ReadOnlyCollection<TreeNode> _nodes;
+        ReadOnlyCollection<TreeNode> _nodes;
 
         public ReadOnlyCollection<TreeNode> Nodes
         {
@@ -308,7 +309,7 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             return base.ToString ();
         }
 
-        private void ChildrenChanged (object sender, NotifyCollectionChangedEventArgs e)
+        void ChildrenChanged (object sender, NotifyCollectionChangedEventArgs e)
         {
             switch (e.Action) {
                 case NotifyCollectionChangedAction.Add:
@@ -339,7 +340,7 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             OnPropertyChanged ("IsExpandable");
         }
 
-        private void RemoveChildAt (int index)
+        void RemoveChildAt (int index)
         {
             var child = Children[index];
             Tree.DropChildrenRows (child, true);
@@ -347,7 +348,7 @@ namespace TreeDataGrid_Warehouse.Controls.TreeDataGrid
             Children.RemoveAt (index);
         }
 
-        private void ClearChildrenSource (TreeNode node)
+        void ClearChildrenSource (TreeNode node)
         {
             node.ChildrenSource = null;
             foreach (var n in node.Children)
